@@ -1,7 +1,7 @@
 import type { Route } from "./+types/home";
 import { Welcome } from "../welcome/welcome";
-//import Hobbies from "../assets/hobbies";
-//import Skills from "../assets/skills";
+import Hobbies from "./hobbies";
+import Profile from "./profile";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -16,7 +16,7 @@ export default function Home() {
 
 export const home = [
   { path: "/", element: <Welcome /> },
-  //{ path: "/hobbies", element: <Hobbies /> },
-  //{ path: "/skills", element: <Skills /> },
+  { path: "/hobbies", element: <Hobbies /> },
+  { path: "/profile", element: <Profile /> },
 ];
 
