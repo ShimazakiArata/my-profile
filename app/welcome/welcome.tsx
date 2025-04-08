@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
+import { motion } from 'framer-motion';
 
 export function Welcome() {
   return (
-    <main className="min-h-screen bg-white flex items-center justify-center">
+  <main className="min-h-screen bg-cover bg-center flex items-center justify-center"
+        style={{ backgroundImage: "url('/Haikei.png')" }}>
+
       <div className="text-center space-y-10">
         <h1 className="text-gray-900 text-5xl md:text-7xl font-serif font-bold">
           プロフィール
@@ -10,20 +13,37 @@ export function Welcome() {
 
         <div className="space-y-4">
           <div className="space-x-2">
+
             <Link to="/hobbies">
-              <button className="px-8 py-3 bg-gradient-to-r from-teal-400 to-blue-500 hover:from-teal-500 hover:to-blue-600 text-white text-lg font-bold rounded-full shadow-lg transition duration-300">
-                趣味
-              </button>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-3 bg-gradient-to-r from-blue-400 to-lime-500 hover:from-blue-500 hover:to-lime-600 text-white text-lg font-bold rounded-full ">
+                趣味・特技
+              </motion.button>
             </Link>
 
             <Link to="/profile">
-              <button className="px-8 py-3 bg-gradient-to-r from-purple-400 to-pink-500 hover:from-purple-500 hover:to-pink-600 text-white text-lg font-bold rounded-full shadow-lg transition duration-300">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-3 bg-gradient-to-r from-purple-400 to-pink-500 hover:from-purple-500 hover:to-pink-600 text-white text-lg font-bold rounded-full ">
                 自己紹介
-              </button>
+              </motion.button>
             </Link>
+
+            <Link to="/skills">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-3 bg-gradient-to-r from-amber-400 to-green-500 hover:from-amber-500 hover:to-green-600 text-white text-lg font-bold rounded-full ">
+                技術・資格
+              </motion.button>
+            </Link>
+
           </div>
-          
         </div>
+
       </div>
     </main>
   );
