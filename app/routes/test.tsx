@@ -1,17 +1,16 @@
-// Page.jsx
-import { motion } from 'framer-motion';
+import React from 'react';
+import Header from './header';
 
-const Page = () => {
+function App() {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.4 }}
-    >
-      <h1>ページ内容</h1>
-    </motion.div>
+    <div>
+      <Header />
+      <main className="p-6">
+        <h2 className="text-2xl">Welcome!</h2>
+        <p>This is your site content.</p>
+      </main>
+    </div>
   );
-};
+}
 
-export default Page;
+export default App;
