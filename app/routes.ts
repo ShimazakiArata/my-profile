@@ -8,6 +8,7 @@ export default [
   route("/skills", "routes/skills.tsx"), 
   route("/test", "routes/test.tsx"), 
   route("/header", "routes/header.tsx"), 
+  route("/scrolltotop", "routes/scrolltotop.tsx"), 
 
 
 ] satisfies RouteConfig;

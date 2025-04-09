@@ -1,53 +1,78 @@
+// src/pages/Skills.tsx
 import { useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
+import { motion } from "framer-motion";
+import Header from "./header";
 
-export default function skills() {
+export default function Skills() {
   const navigate = useNavigate();
+  const goBack = () => navigate(-1);
 
-  const goBack = () => {
-    navigate(-1); 
-  };
+  return (
+    <main
+      className="min-h-screen bg-cover bg-center px-4 pt-40 flex items-center justify-center"
+      style={{ backgroundImage: "url('/Haikei.png')" }}
+    >
+      {/* ヘッダー */}
+      <Header />
 
-    return (
-      <main className="min-h-screen bg-cover bg-center flex items-center justify-center"
-      style={{ backgroundImage: "url('/Haikei.png')" }}>
-           <div className="bg-white dark:bg-gray-800 p-10 rounded-2xl shadow-xl max-w-3xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8 text-center text-gray-800 dark:text-gray-100">
-          技術・資格
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md p-10 rounded-3xl shadow-2xl max-w-3xl w-full text-center"
+      >
+        <h1 className="text-4xl font-extrabold mb-10 text-gray-800 dark:text-gray-100 tracking-wide">
+          ⚙ 技術・資格
         </h1>
-        <ul className="space-y-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-          <li className="flex items-start gap-4">
-            <span>
-              言語系　c言語、c++、C#　基礎知識
-            </span>
-          </li>
-          <li className="flex items-start gap-4">
-            <span>
-              開発ツール　Unity,UnrealEngine　基礎、設計方法
-            </span>
-          </li>
-          <li className="flex items-start gap-4">
-            <span>
-              資格　CG‐ARTS検定ベーシック・情報処理検定2級
-            </span>
-          </li>
-          <li className="flex items-start gap-4">
-            <span>
-              受賞歴　学内コンテスト構成力賞（個人製作3Dアクションゲーム）
-            </span>
-          </li>
-        </ul>
-      </div>
 
-      {/* 前の画面に戻るボタン */}
-      <button
+        <ul className="space-y-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-left">
+          {[
+            {
+              icon: "⚙",
+              color: "text-teal-500",
+              text: "言語系　C言語、C++、C# の基礎知識",
+            },
+            {
+              icon: "🔩",
+              color: "text-teal-500",
+              text: "開発ツール　Unity、Unreal Engine　基礎・設計方法",
+            },
+            {
+              icon: "📒",
+              color: "text-teal-500",
+              text: "資格　CG-ARTS検定ベーシック・情報処理検定2級",
+            },
+            {
+              icon: "👑",
+              color: "text-teal-500",
+              text: "受賞歴　学内コンテスト構成力賞（個人製作3Dアクションゲーム）",
+            },
+          ].map((item, i) => (
+            <motion.li
+              key={i}
+              className="flex items-start gap-4 bg-white/60 dark:bg-gray-700/60 p-4 rounded-xl shadow hover:scale-[1.02] transition-transform duration-200"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: i * 0.2 }}
+            >
+              <span className={`mt-1 text-2xl ${item.color}`}>{item.icon}</span>
+              <span>{item.text}</span>
+            </motion.li>
+          ))}
+        </ul>
+      </motion.div>
+
+      {/* 戻るボタン */}
+      <motion.button
         onClick={goBack}
-        className="fixed bottom-6 left-6 bg-gray-600 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition duration-300"
+        whileHover={{ scale: 1.1, rotate: -5 }}
+        whileTap={{ scale: 0.95 }}
+        className="fixed top-6 left-6 z-50 bg-gray-700 hover:bg-gray-800 text-white p-3 rounded-full shadow-2xl"
         aria-label="前の画面に戻る"
       >
         <FaArrowLeft />
-      </button>
-
-        </main>
-      );
+      </motion.button>
+    </main>
+  );
 }

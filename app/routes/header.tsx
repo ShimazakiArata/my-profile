@@ -1,21 +1,31 @@
-// Header.jsx
-import React from 'react';
+import { Link, useLocation } from "react-router-dom";
 
-const Header = () => {
+export default function Header() {
+  const location = useLocation();
+
+  const navItems = [
+    { path: "/", label: "ホーム" },
+    { path: "/profile", label: "自己紹介" },
+    { path: "/hobbies", label: "趣味・特技" },
+    { path: "/skills", label: "技術・資格" },
+  ];
+
   return (
-    <header className="bg-white shadow-md p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-xl font-bold text-gray-800">MyProfile</h1>
-        <nav>
-          <ul className="flex space-x-6 text-gray-600">
-            <li><a href="#" className="hover:text-blue-500">Home</a></li>
-            <li><a href="#" className="hover:text-blue-500">About</a></li>
-            <li><a href="#" className="hover:text-blue-500">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
+    <header className="fixed top-0 w-full flex justify-center gap-4 md:gap-6 py-4 bg-white/70 dark:bg-gray-800/70 backdrop-blur-md shadow z-50">
+      {navItems.map((item) => (
+        <Link
+          key={item.path}
+          to={item.path}
+          className={`px-3 py-2 rounded-lg text-sm font-semibold transition-all
+            ${
+              location.pathname === item.path
+                ? "bg-blue-500 text-white shadow"
+                : "text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
+            }`}
+        >
+          {item.label}
+        </Link>
+      ))}
     </header>
   );
-};
-
-export default Header;
+}

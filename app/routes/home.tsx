@@ -1,5 +1,6 @@
 import type { Route } from "../+types/home";
 import { Welcome } from "../welcome/welcome";
+//import ScrollToTop from "./scrollToTop";
 import Hobbies from "./hobbies";
 import Profile from "./profile";
 import Skills from "./skills";
@@ -25,4 +26,5 @@ export const home = [
   { path: "/skills", element: <Skills /> },
   { path: "/test", element: <Test /> },
   { path: "/header", element: <Header /> },
+  //{ path: "/scrolltotop", element: <ScrollToTop /> },
 ];
