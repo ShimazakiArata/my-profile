@@ -1,11 +1,11 @@
-import type { Route } from "../+types/home";
+import type { Route } from "./+types/home";
 import { Welcome } from "../welcome/welcome";
-//import ScrollToTop from "./scrollToTop";
 import Hobbies from "./hobbies";
 import Profile from "./profile";
 import Skills from "./skills";
 import Test from "./test";
 import Header from "./header";
+//import Tab from "./Tab";
 
 
 export function meta({}: Route.MetaArgs) {
@@ -26,5 +26,4 @@ export const home = [
   { path: "/skills", element: <Skills /> },
   { path: "/test", element: <Test /> },
   { path: "/header", element: <Header /> },
-  //{ path: "/scrolltotop", element: <ScrollToTop /> },
 ];
