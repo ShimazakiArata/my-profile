@@ -5,7 +5,6 @@ import Profile from "./profile";
 import Skills from "./skills";
 import Test from "./test";
 import Header from "./header";
-//import Tab from "./Tab";
 
 
 export function meta({}: Route.MetaArgs) {
