@@ -4,13 +4,17 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
 import 'swiper/css'
 
-const works = [
+const repeat = (arr: any[], times: number) =>
+    Array(times).fill(null).flatMap(() => arr)
+  
+  const baseWorks = [
     { src: '/images/work1.png', title: '3Dアクションゲーム' },
     { src: '/images/work2.png', title: 'UnrealEngine使用ゲーム' },
     { src: '/images/work3.png', title: 'チーム制作ゲーム' },
-    { src: '/images/work1.png', title: '3Dアクションゲーム' },
-    { src: '/images/work2.png', title: 'UnrealEngine使用ゲーム' },
   ]
+  
+  const works = repeat(baseWorks, 3)
+  
   
 
 export default function WorksCarousel() {
