@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Header from "./header";
+import WorksCarousel from './components/WorksCarousel'
+
 
 export default function Profile() {
   const [scrollPercent, setScrollPercent] = useState(0);
@@ -80,6 +82,9 @@ export default function Profile() {
           ))}
         </motion.section>
       </motion.div>
+      
+      {/* 制作作品カルーセル */}
+      <WorksCarousel />
     </main>
   );
 }
