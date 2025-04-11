@@ -19,7 +19,7 @@ export function Welcome() {
         >
           {/* プロフィール画像 */}
           <motion.img
-            src="/neko.webp"
+            src="/profile.webp"
             alt="Profile"
             className="w-48 h-48 object-cover rounded-full shadow-md border-4 border-stone-300"
             initial={{ opacity: 0, scale: 0.8 }}

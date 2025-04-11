@@ -99,22 +99,24 @@ export default function Skills() {
           </motion.div>
         </div>
 
-        {/* 制作作品（動画） */}
         <section className="pt-8">
-          <h2 className="text-2xl font-bold mb-4 flex items-center">
-            🎬 制作作品（動画）
-          </h2>
-          <video
-            controls
-            className="w-full max-h-[480px] rounded-xl shadow border border-stone-300"
-          >
-            <source src="/videos/mygame.mp4" type="video/mp4" />
-            お使いのブラウザは video タグをサポートしていません。
-          </video>
-          <p className="text-stone-600 mt-2 text-sm">
-            ※ 専門学校時代に制作した3Dアクションゲームのプレイ映像です。
-          </p>
-        </section>
+  <h2 className="text-2xl font-bold mb-4 flex items-center">
+    🎬 制作作品（動画）
+  </h2>
+  <div className="aspect-video w-full rounded-xl overflow-hidden shadow border border-stone-300">
+    <iframe
+      src="https://www.youtube.com/embed/KlRTAyPB4y8?si=9Fcx5XoFg48qrQtk" // ←自分のURLに差し替え
+      title="制作動画"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      className="w-full h-full"
+    ></iframe>
+  </div>
+  <p className="text-stone-600 mt-2 text-sm">
+    ※ 専門学校時代に制作した3Dアクションゲームのプレイ映像です。
+  </p>
+</section>
+
       </motion.div>
     </main>
   );
