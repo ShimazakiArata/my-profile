@@ -2,7 +2,7 @@
 import { useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import { motion } from "framer-motion";
-import Header from "./components/header";
+import Header from "./header";
 
 export default function Skills() {
   const navigate = useNavigate();

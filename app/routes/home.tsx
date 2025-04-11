@@ -4,7 +4,7 @@ import Hobbies from "./hobbies";
 import Profile from "./profile";
 import Skills from "./skills";
 import Test from "./test";
-import Header from "./components/header";
+import Header from "./header";
 
 
 export function meta({}: Route.MetaArgs) {

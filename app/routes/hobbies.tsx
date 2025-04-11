@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import Header from "./components/header";
+import Header from "./header";
 
 export default function Hobbies() {
   useEffect(() => {

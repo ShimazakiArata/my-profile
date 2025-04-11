@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Header from "./components/header";
+import Header from "./header";
 import WorksCarousel from './components/WorksCarousel'
 
 

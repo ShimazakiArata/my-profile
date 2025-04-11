@@ -5,12 +5,13 @@ import { Autoplay } from 'swiper/modules'
 import 'swiper/css'
 
 const works = [
-  { src: '/app/images/work1.png', title: '3Dアクションゲーム' },
-  { src: '/app/images/work2.png', title: 'UnrealEngine使用ゲーム' },
-  { src: '/app/images/work3.png', title: 'チーム制作ゲーム' },
-  { src: '/app/images/work1.png', title: '3Dアクションゲーム' }, // 複製すると自然な無限感
-  { src: '/app/images/work2.png', title: 'UnrealEngine使用ゲーム' },
-]
+    { src: '/images/work1.png', title: '3Dアクションゲーム' },
+    { src: '/images/work2.png', title: 'UnrealEngine使用ゲーム' },
+    { src: '/images/work3.png', title: 'チーム制作ゲーム' },
+    { src: '/images/work1.png', title: '3Dアクションゲーム' },
+    { src: '/images/work2.png', title: 'UnrealEngine使用ゲーム' },
+  ]
+  
 
 export default function WorksCarousel() {
   return (
@@ -19,18 +20,21 @@ export default function WorksCarousel() {
   🖼️ 制作作品
 </h2>
 
-      <Swiper
-        modules={[Autoplay]}
-        loop={true}
-        spaceBetween={30}
-        slidesPerView={2.5}
-        speed={5000}
-        autoplay={{
-          delay: 0,
-          disableOnInteraction: false,
-        }}
-        className="w-full max-w-5xl"
-      >
+<Swiper
+  modules={[Autoplay]}
+  loop={true}
+  spaceBetween={30}
+  slidesPerView={2.5}
+  centeredSlides={true}
+  grabCursor={true}
+  speed={5000}
+  autoplay={{
+    delay: 0,
+    disableOnInteraction: false,
+  }}
+  className="w-full max-w-5xl"
+>
+
         {works.map((work, index) => (
           <SwiperSlide key={index}>
             <div className="rounded-xl overflow-hidden shadow border border-stone-300 bg-white">
