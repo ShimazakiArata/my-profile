@@ -113,7 +113,7 @@ export default function Skills() {
     ></iframe>
   </div>
   <p className="text-stone-600 mt-2 text-sm">
-    ※ 専門学校時代に制作した3Dアクションゲームのプレイ映像です。
+    ※ 専門学校時代にチームで制作した3Dアクションゲームのプレイ映像です。
   </p>
 </section>
 
