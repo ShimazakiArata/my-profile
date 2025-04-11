@@ -10,69 +10,112 @@ export default function Skills() {
 
   return (
     <main
-      className="min-h-screen bg-cover bg-center px-4 pt-40 flex items-center justify-center"
-      style={{ backgroundImage: "url('/Haikei.png')" }}
+      className="min-h-screen bg-[url('/wood-texture.jpg')] bg-cover bg-center px-4 pt-40 flex items-center justify-center text-stone-800"
     >
-      {/* ヘッダー */}
       <Header />
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md p-10 rounded-3xl shadow-2xl max-w-3xl w-full text-center"
+        className="bg-white/80 backdrop-blur-sm p-10 rounded-3xl shadow-2xl max-w-4xl w-full space-y-10"
       >
-        <h1 className="text-4xl font-extrabold mb-10 text-gray-800 dark:text-gray-100 tracking-wide">
+        <h1 className="text-4xl font-extrabold text-stone-800 tracking-wide text-center">
           ⚙ 技術・資格
         </h1>
 
-        <ul className="space-y-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-left">
-          {[
-            {
-              icon: "⚙",
-              color: "text-teal-500",
-              text: "言語系　C言語、C++、C# の基礎知識",
-            },
-            {
-              icon: "🔩",
-              color: "text-teal-500",
-              text: "開発ツール　Unity、Unreal Engine　基礎・設計方法",
-            },
-            {
-              icon: "📒",
-              color: "text-teal-500",
-              text: "資格　CG-ARTS検定ベーシック・情報処理検定2級",
-            },
-            {
-              icon: "👑",
-              color: "text-teal-500",
-              text: "受賞歴　学内コンテスト構成力賞（個人製作3Dアクションゲーム）",
-            },
-          ].map((item, i) => (
-            <motion.li
-              key={i}
-              className="flex items-start gap-4 bg-white/60 dark:bg-gray-700/60 p-4 rounded-xl shadow hover:scale-[1.02] transition-transform duration-200"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: i * 0.2 }}
-            >
-              <span className={`mt-1 text-2xl ${item.color}`}>{item.icon}</span>
-              <span>{item.text}</span>
-            </motion.li>
-          ))}
-        </ul>
-      </motion.div>
+        {/* スキルカード（2分割） */}
+        <div className="grid gap-6 md:grid-cols-2">
+          {/* 言語スキル + 使用ツール */}
+          <motion.div
+            className="bg-white/70 backdrop-blur p-6 rounded-xl shadow text-left"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <span className="text-2xl">💻</span>
+              <h2 className="text-xl font-semibold">言語・ツールスキル</h2>
+            </div>
+            <p className="mb-4 text-stone-700">
+              C言語 / C++ / C# の基礎を学び、主に以下のツールを使用しています。
+            </p>
+            <ul className="space-y-2">
+              {[
+                {
+                  name: "Unity",
+                  level: "〇",
+                  desc: "3Dアクションゲーム制作で活用",
+                },
+                {
+                  name: "Unreal Engine",
+                  level: "〇",
+                  desc: "設計・ブループリントの実装経験あり",
+                },
+                {
+                  name: "Git",
+                  level: "〇",
+                  desc: "チーム開発で使用経験あり",
+                },
+                {
+                  name: "Maya",
+                  level: "△",
+                  desc: "簡易モデリングの学習中",
+                },
+              ].map((tool, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <span className="font-mono text-xl text-teal-600">{tool.level}</span>
+                  <div>
+                    <div className="font-semibold">{tool.name}</div>
+                    <div className="text-sm text-stone-600">{tool.desc}</div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+            <p className="text-xs text-stone-500 mt-4">
+              ◎：実務レベル / 〇：使用経験あり / △：学習中
+            </p>
+          </motion.div>
 
-      {/* 戻るボタン */}
-      <motion.button
-        onClick={goBack}
-        whileHover={{ scale: 1.1, rotate: -5 }}
-        whileTap={{ scale: 0.95 }}
-        className="fixed top-6 left-6 z-50 bg-gray-700 hover:bg-gray-800 text-white p-3 rounded-full shadow-2xl"
-        aria-label="前の画面に戻る"
-      >
-        <FaArrowLeft />
-      </motion.button>
+          {/* 資格 + 受賞歴 */}
+          <motion.div
+            className="bg-white/70 backdrop-blur p-6 rounded-xl shadow text-left"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <span className="text-2xl">📜</span>
+              <h2 className="text-xl font-semibold">資格・受賞歴</h2>
+            </div>
+            <ul className="list-disc pl-5 text-stone-700 space-y-2">
+              <li>
+                CG-ARTS検定ベーシック / 情報処理検定2級 取得
+              </li>
+              <li>
+                学内コンテストにて構成力賞を受賞（個人制作3Dアクションゲーム）
+              </li>
+            </ul>
+          </motion.div>
+        </div>
+
+        {/* 制作作品（動画） */}
+        <section className="pt-8">
+          <h2 className="text-2xl font-bold mb-4 flex items-center">
+            🎬 制作作品（動画）
+          </h2>
+          <video
+            controls
+            className="w-full max-h-[480px] rounded-xl shadow border border-stone-300"
+          >
+            <source src="/videos/mygame.mp4" type="video/mp4" />
+            お使いのブラウザは video タグをサポートしていません。
+          </video>
+          <p className="text-stone-600 mt-2 text-sm">
+            ※ 専門学校時代に制作した3Dアクションゲームのプレイ映像です。
+          </p>
+        </section>
+      </motion.div>
     </main>
   );
 }
