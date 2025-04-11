@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Gamepad2, User, BadgeCheck } from "lucide-react";
-import Header from "app/routes/header";
+import Header from "~/routes/components/header";
 import { FaGithub, FaXTwitter, FaInstagram } from "react-icons/fa6";
 
 export function Welcome() {
