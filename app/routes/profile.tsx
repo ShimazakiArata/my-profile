@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Header from "./header";
-import WorksCarousel from './components/WorksCarousel'
-
+import WorksCarousel from "./components/WorksCarousel";
 
 export default function Profile() {
   const [scrollPercent, setScrollPercent] = useState(0);
 
   useEffect(() => {
+    // ページ最上部へスクロール
     window.scrollTo(0, 0);
 
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
       const scrolled = (scrollTop / docHeight) * 100;
       setScrollPercent(scrolled);
     };
@@ -24,9 +25,7 @@ export default function Profile() {
   const container = {
     hidden: {},
     show: {
-      transition: {
-        staggerChildren: 0.3,
-      },
+      transition: { staggerChildren: 0.3 },
     },
   };
 
@@ -49,6 +48,7 @@ export default function Profile() {
 
       <Header />
 
+      {/* 経歴セクション */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -76,7 +76,11 @@ export default function Profile() {
             "高校卒業後、将来はゲーム関係の仕事がしたいと思い専門学校へ進学。未経験からある程度の知識を身に着けることができた。",
             "実際に開発してみると苦労もあり、IT系に進路を変更。現在入社1年目。",
           ].map((text, index) => (
-            <motion.p key={index} variants={item} className="bg-white/70 p-4 rounded-xl shadow border border-stone-200">
+            <motion.p
+              key={index}
+              variants={item}
+              className="bg-white/70 p-4 rounded-xl shadow border border-stone-200"
+            >
               {text}
             </motion.p>
           ))}

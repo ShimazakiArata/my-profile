@@ -91,39 +91,39 @@ export function Welcome() {
 
       {/* フッター・SNSリンク */}
       <footer className="mt-20 mb-6 flex justify-center gap-4">
-  {/* GitHub */}
-  <a
-    href="https://github.com/Mazaki0314"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-12 h-12 flex items-center justify-center rounded-full bg-stone-700 hover:bg-stone-600 transition"
-    aria-label="GitHub"
-  >
-    <FaGithub className="w-6 h-6 text-white" />
-  </a>
+        {/* GitHub */}
+        <a
+          href="https://github.com/Mazaki0314"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-12 h-12 flex items-center justify-center rounded-full bg-stone-700 hover:bg-stone-600 transition"
+          aria-label="GitHub"
+        >
+          <FaGithub className="w-6 h-6 text-white" />
+        </a>
 
-  {/* X (Twitter) */}
-  <a
-    href="https://x.com/Mazaki177"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-12 h-12 flex items-center justify-center rounded-full bg-stone-700 hover:bg-stone-600 transition"
-    aria-label="X (Twitter)"
-  >
-    <FaXTwitter className="w-6 h-6 text-white" />
-  </a>
+        {/* X (Twitter) */}
+        <a
+          href="https://x.com/Mazaki177"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-12 h-12 flex items-center justify-center rounded-full bg-stone-700 hover:bg-stone-600 transition"
+          aria-label="X (Twitter)"
+        >
+          <FaXTwitter className="w-6 h-6 text-white" />
+        </a>
 
-  {/* Instagram */}
-  <a
-    href="https://instagram.com/Mazaki177"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-12 h-12 flex items-center justify-center rounded-full bg-stone-700 hover:bg-stone-600 transition"
-    aria-label="Instagram"
-  >
-    <FaInstagram className="w-6 h-6 text-white" />
-  </a>
-</footer>
+        {/* Instagram */}
+        <a
+          href="https://instagram.com/Mazaki177"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-12 h-12 flex items-center justify-center rounded-full bg-stone-700 hover:bg-stone-600 transition"
+          aria-label="Instagram"
+        >
+          <FaInstagram className="w-6 h-6 text-white" />
+        </a>
+      </footer>
     </main>
   );
 }

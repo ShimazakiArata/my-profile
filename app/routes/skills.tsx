@@ -1,5 +1,3 @@
-// src/pages/Skills.tsx
-
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Header from "./header";
@@ -18,9 +16,12 @@ export default function Skills() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="bg-white/80 backdrop-blur-sm p-10 rounded-3xl shadow-2xl max-w-4xl w-full space-y-10"
       >
+        {/* タイトル */}
         <h1 className="text-4xl font-extrabold text-stone-800 tracking-wide text-center">
           ⚙ 技術・資格
         </h1>
+
+        {/* スキル・資格 */}
         <div className="grid gap-6 md:grid-cols-2">
           {/* 言語スキル + 使用ツール */}
           <motion.div
@@ -38,26 +39,10 @@ export default function Skills() {
             </p>
             <ul className="space-y-2">
               {[
-                {
-                  name: "Unity",
-                  level: "〇",
-                  desc: "ゲーム制作で使用",
-                },
-                {
-                  name: "Unreal Engine",
-                  level: "〇",
-                  desc: "設計・ブループリントの経験あり",
-                },
-                {
-                  name: "Git",
-                  level: "〇",
-                  desc: "チーム開発での使用経験",
-                },
-                {
-                  name: "Maya",
-                  level: "△",
-                  desc: "簡易モデリングのみ",
-                },
+                { name: "Unity", level: "〇", desc: "ゲーム制作で使用" },
+                { name: "Unreal Engine", level: "〇", desc: "設計・ブループリントの経験あり" },
+                { name: "Git", level: "〇", desc: "チーム開発での使用経験" },
+                { name: "Maya", level: "△", desc: "簡易モデリングのみ" },
               ].map((tool, index) => (
                 <li key={index} className="flex items-start gap-3">
                   <span className="font-mono text-xl text-teal-600">{tool.level}</span>
@@ -85,34 +70,30 @@ export default function Skills() {
               <h2 className="text-xl font-semibold">資格・受賞歴</h2>
             </div>
             <ul className="list-disc pl-5 text-stone-700 space-y-2">
-              <li>
-                CG-ARTS検定ベーシック / 情報処理検定2級 取得
-              </li>
-              <li>
-                学内コンテスト　構成力賞受賞（個人制作）
-              </li>
+              <li>CG-ARTS検定ベーシック / 情報処理検定2級 取得</li>
+              <li>学内コンテスト　構成力賞受賞（個人制作）</li>
             </ul>
           </motion.div>
         </div>
 
+        {/* 制作動画 */}
         <section className="pt-8">
-  <h2 className="text-2xl font-bold mb-4 flex items-center">
-    🎬 制作作品（動画）
-  </h2>
-  <div className="aspect-video w-full rounded-xl overflow-hidden shadow border border-stone-300">
-    <iframe
-      src="https://www.youtube.com/embed/KlRTAyPB4y8?si=9Fcx5XoFg48qrQtk" 
-      title="制作動画"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      className="w-full h-full"
-    ></iframe>
-  </div>
-  <p className="text-stone-600 mt-2 text-sm">
-    ※ 専門学校時代にチームで制作した3Dアクションゲームのプレイ映像です。
-  </p>
-</section>
-
+          <h2 className="text-2xl font-bold mb-4 flex items-center">
+            🎬 制作作品（動画）
+          </h2>
+          <div className="aspect-video w-full rounded-xl overflow-hidden shadow border border-stone-300">
+            <iframe
+              src="https://www.youtube.com/embed/KlRTAyPB4y8?si=9Fcx5XoFg48qrQtk"
+              title="制作動画"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            ></iframe>
+          </div>
+          <p className="text-stone-600 mt-2 text-sm">
+            ※ 専門学校時代にチームで制作した3Dアクションゲームのプレイ映像です。
+          </p>
+        </section>
       </motion.div>
     </main>
   );
