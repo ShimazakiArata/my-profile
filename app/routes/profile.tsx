@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Header from "./header";
 import WorksCarousel from './components/WorksCarousel'
 
@@ -72,9 +72,9 @@ export default function Profile() {
           className="space-y-6 text-lg leading-relaxed text-left"
         >
           {[
-            "千葉県船橋市に在住、父の影響で小さいころからIT系の道には進もうと思っていた。ゲーム大好き少年だったのでゲーム開発の仕事がしたいと考えるように。",
-            "高校卒業後、本格的に学ぶために専門学校へ進学。C言語、Linux、プロマネなどの授業を主に受けながら何作かゲームを制作した。主にUnityを使用したがUnrealEngineでも制作を行った。",
-            "現在はドリームキャリアのITS事業部に所属、未経験の技術に揉まれながら、日々成長を目指している。",
+            "出身は千葉県、高校は普通校に進学。この時までPCに触れたことはなかった。",
+            "高校卒業後、将来はゲーム関係の仕事がしたいと思い専門学校へ進学。未経験からある程度の知識を身に着けることができた。",
+            "実際に開発してみると苦労もあり、IT系に進路を変更。現在入社1年目。",
           ].map((text, index) => (
             <motion.p key={index} variants={item} className="bg-white/70 p-4 rounded-xl shadow border border-stone-200">
               {text}

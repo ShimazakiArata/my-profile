@@ -1,6 +1,6 @@
 // src/pages/Skills.tsx
+
 import { useNavigate } from "react-router-dom";
-import { FaArrowLeft } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Header from "./header";
 
@@ -9,9 +9,7 @@ export default function Skills() {
   const goBack = () => navigate(-1);
 
   return (
-    <main
-      className="min-h-screen bg-[url('/wood-texture.jpg')] bg-cover bg-center px-4 pt-40 flex items-center justify-center text-stone-800"
-    >
+    <main className="min-h-screen bg-[url('/wood-texture.jpg')] bg-cover bg-center px-4 pt-40 flex items-center justify-center text-stone-800">
       <Header />
 
       <motion.div
@@ -23,8 +21,6 @@ export default function Skills() {
         <h1 className="text-4xl font-extrabold text-stone-800 tracking-wide text-center">
           ⚙ 技術・資格
         </h1>
-
-        {/* スキルカード（2分割） */}
         <div className="grid gap-6 md:grid-cols-2">
           {/* 言語スキル + 使用ツール */}
           <motion.div
@@ -45,22 +41,22 @@ export default function Skills() {
                 {
                   name: "Unity",
                   level: "〇",
-                  desc: "3Dアクションゲーム制作で活用",
+                  desc: "ゲーム制作で使用",
                 },
                 {
                   name: "Unreal Engine",
                   level: "〇",
-                  desc: "設計・ブループリントの実装経験あり",
+                  desc: "設計・ブループリントの経験あり",
                 },
                 {
                   name: "Git",
                   level: "〇",
-                  desc: "チーム開発で使用経験あり",
+                  desc: "チーム開発での使用経験",
                 },
                 {
                   name: "Maya",
                   level: "△",
-                  desc: "簡易モデリングの学習中",
+                  desc: "簡易モデリングのみ",
                 },
               ].map((tool, index) => (
                 <li key={index} className="flex items-start gap-3">
@@ -93,7 +89,7 @@ export default function Skills() {
                 CG-ARTS検定ベーシック / 情報処理検定2級 取得
               </li>
               <li>
-                学内コンテストにて構成力賞を受賞（個人制作3Dアクションゲーム）
+                学内コンテスト　構成力賞受賞（個人制作）
               </li>
             </ul>
           </motion.div>
@@ -105,7 +101,7 @@ export default function Skills() {
   </h2>
   <div className="aspect-video w-full rounded-xl overflow-hidden shadow border border-stone-300">
     <iframe
-      src="https://www.youtube.com/embed/KlRTAyPB4y8?si=9Fcx5XoFg48qrQtk" // ←自分のURLに差し替え
+      src="https://www.youtube.com/embed/KlRTAyPB4y8?si=9Fcx5XoFg48qrQtk" 
       title="制作動画"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen

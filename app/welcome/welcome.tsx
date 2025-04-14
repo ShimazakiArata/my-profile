@@ -44,12 +44,8 @@ export function Welcome() {
             </h3>
             <p className="text-stone-700 leading-relaxed text-lg">
               はじめまして、島崎新太といいます。<br />
-              県立の普通校を卒業後、ゲーム開発がしたいと考えていたので専門学校へ進学。<br />
-              趣味はカラオケとアニメ視聴。敬愛するアーティストはL'Arc~en~Ciel。<br />
-              おすすめのアニメは交響詩篇エウレカセブン。
-            </p>
-            <p className="text-stone-700 leading-relaxed text-lg">
-              C言語中心にゲームを何本か制作。Unity、UnrealEngineなどを使うのが得意です。
+              C言語中心にゲームを何本か制作。
+              Unity、UnrealEngineなどを使うのが得意です。
             </p>
           </section>
 
@@ -66,7 +62,7 @@ export function Welcome() {
               {
                 to: "/hobbies",
                 icon: <Gamepad2 className="mr-2" size={18} />,
-                text: "趣味・特技",
+                text: "趣味",
                 bg: "bg-lime-200",
                 textColor: "text-lime-900",
               },

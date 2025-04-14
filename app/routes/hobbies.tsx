@@ -31,39 +31,39 @@ export default function Hobbies() {
       <Header />
 
       <div className="pt-40 px-4 flex justify-center items-center relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex flex-col items-center bg-white/80 backdrop-blur-sm p-10 rounded-3xl border border-stone-300 shadow-xl max-w-4xl w-full space-y-8"
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="bg-white/80 backdrop-blur-sm p-10 rounded-3xl shadow-2xl max-w-3xl w-full text-center mb-10 border border-stone-300"
+      >
+        <motion.h1
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-4xl font-extrabold mb-10 tracking-wide"
         >
-          {/* タイトル */}
-          <h1 className="text-4xl md:text-5xl font-bold text-stone-800 tracking-wide">
-            🎤 趣味・特技
-          </h1>
+          🎤 趣味
+        </motion.h1>
 
           {/* セクションカード */}
           <motion.section
-            variants={container}
-            initial="hidden"
-            animate="show"
-            className="w-full bg-white/70 backdrop-blur-sm p-8 rounded-2xl border border-stone-200 shadow space-y-6"
-          >
-            {[
-              "カラオケ大好き。学生の頃は一人でもしょっちゅう行ってた。",
-              "フェスも当たればいってた。直近のRJFで聞いた羊文学にハマっている。",
-              "アニメではロボットやメカ系ジャンルが好み。",
-              "最近はプラモ作りをちょこちょこ行っている。",
-            ].map((text, index) => (
-              <motion.p
-                key={index}
-                variants={item}
-                className="text-lg leading-relaxed text-stone-700"
-              >
-                {text}
-              </motion.p>
-            ))}
-          </motion.section>
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="space-y-6 text-lg leading-relaxed text-left"
+        >
+          {[
+            "趣味はカラオケとアニメを見ること。楽器もやってみたい。",
+            "好きなアーティストは、L'Arc~en~Ciel。中でも1995~2008年が個人的ベスト。",
+            "アニメはSF物が好きで特にガンダム作品はほぼ視聴済み。",
+            "趣味とまでは行かないがプラモ作成もたまにやる。",
+          ].map((text, index) => (
+            <motion.p key={index} variants={item} className="bg-white/70 p-4 rounded-xl shadow border border-stone-200">
+              {text}
+            </motion.p>
+          ))}
+        </motion.section>
         </motion.div>
       </div>
     </main>

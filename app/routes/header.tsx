@@ -10,7 +10,7 @@ export default function Header() {
   const navItems = [
     { path: "/", label: "ホーム" },
     { path: "/profile", label: "経歴" },
-    { path: "/hobbies", label: "趣味・特技" },
+    { path: "/hobbies", label: "趣味" },
     { path: "/skills", label: "技術・資格" },
   ];
 
