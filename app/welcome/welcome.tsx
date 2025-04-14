@@ -3,8 +3,22 @@ import { motion } from "framer-motion";
 import { Gamepad2, User, BadgeCheck } from "lucide-react";
 import Header from "~/routes/header";
 import { FaGithub, FaXTwitter, FaInstagram } from "react-icons/fa6";
+import Loading from "~/routes/components/Loading";
+import { useState, useEffect } from "react";
 
 export function Welcome() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // 2秒間ローディングを表示してから非表示
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) return <Loading />;
   return (
     <main className="min-h-screen bg-[url('/wood-texture.jpg')] bg-cover bg-center text-stone-800 relative overflow-hidden">
       <Header />
