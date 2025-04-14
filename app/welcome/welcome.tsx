@@ -76,12 +76,17 @@ export function Welcome() {
             ].map(({ to, icon, text, bg, textColor }) => (
               <Link key={to} to={to}>
                 <motion.button
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{
+                  scale: 1.08,
+                  y: -4,
+                  boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.15)",
+                }}
                   whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 300 }}
                   className={`inline-flex items-center px-5 py-2.5 ${bg} ${textColor} font-semibold rounded-full shadow-md hover:shadow-lg transition duration-300`}
                 >
-                  {icon}
-                  {text}
+                {icon}
+                {text}
                 </motion.button>
               </Link>
             ))}
